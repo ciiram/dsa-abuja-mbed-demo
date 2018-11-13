@@ -130,9 +130,9 @@ int main() {
     lorawan_connect_t connect_params;
     connect_params.connect_type = LORAWAN_CONNECTION_ABP;
 
-    connect_params.connection_u.abp.dev_addr = DEVADDR_1;
-    connect_params.connection_u.abp.nwk_skey = NWKSKEY_1;
-    connect_params.connection_u.abp.app_skey = APPSKEY_1;
+    connect_params.connection_u.abp.dev_addr = DEVADDR_0;
+    connect_params.connection_u.abp.nwk_skey = NWKSKEY_0;
+    connect_params.connection_u.abp.app_skey = APPSKEY_0;
 
     lorawan_status_t retcode = lorawan.connect(connect_params);
 
