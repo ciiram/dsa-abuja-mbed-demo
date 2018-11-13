@@ -7,5 +7,5 @@
 #define TEMP_TRANSMIT 3
 #define MOTION_TRANSMIT 4
 
-#define PROGRAM HELLO_WORLD
+#define PROGRAM MOTION_DETECT
 #endif
