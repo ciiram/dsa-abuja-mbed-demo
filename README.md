@@ -124,4 +124,33 @@ Nothing required.
 
 Follow instructions on Jan's [repo](https://github.com/janjongboom/dsa2018-greenhouse-monitor) in the *Grabbing credentials from The Things Network* section.
 
+Get the device address, network session key and application session key.
+
+1. Click the **Copy** button next to 'Device Address' to copy to clipboard.
+
+    ![device-address](media/ttn23.png)
+
+1. Click the `< >` button of the **Network session key** and **Application session key** values to show the value as C-style array.
+1. Click the **Copy** button on the right of the value to copy to clipboard.
+
+Paste these keys into the file `inc/device_addresses.h` in the appropriate sections:
+
+![sim2](media/sim2.png)
+
+* Put Device Address on the first line, prefixed with `0x`!
+* Put Network Session Key on the second line, don't forget to add `;` at the end.
+* Put Application Session Key on the third line, don't forget to add `;` at the end.
+
+1. Connect the temperature sensor as you did earlier.
+1. Connect the LoRa sheild on top of the Nucleo board.
+1. The correct orientation of the LoRa shield is when all the logos are on the top.
+1. On the online compiler, open `select_program.h`.
+1. Set:
+
+    ```
+    #define PROGRAM TEMP_TRANSMIT
+    ```
+1. Compile, flash, ...
+1. View the output on the console.
+1. You should see the data on the console also appear on TTN in your device under the data tab.
 
