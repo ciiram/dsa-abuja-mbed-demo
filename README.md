@@ -84,8 +84,18 @@ This has cloned the repository.
     ![Compile](media/mbed4.png)
 
 1. A binary (.bin) file downloads, use drag-and-drop to copy the file to the NODE_F446RE device (like a USB mass storage device).
-1. We need to view the program output with temperature and humidity values on the console
+1. We need to view the program output with temperature and humidity values on the console. In linux we do the following
 
+```
+$ ls /dev/ttyACM*
+/dev/ttyACM0
+```
+
+Then connect to the board using screen:
+
+```
+sudo screen /dev/ttyACM0 9600                # might not need sudo if set up lsusb rules properly
+```
 ### Software to obtain console output
 **Windows**
 
@@ -151,6 +161,25 @@ Paste these keys into the file `inc/device_addresses.h` in the appropriate secti
     #define PROGRAM TEMP_TRANSMIT
     ```
 1. Compile, flash, ...
-1. View the output on the console.
+1. View the output on the console. You get something similar to
+```
+=========================================
+      DSA 2018 Green House Monitor
+=========================================
+Sending every 20 seconds
+[DBG ][LSTK]: Initializing MAC layer
+[DBG ][LSTK]: Initiating ABP
+[DBG ][LSTK]: Frame Counters. UpCnt=0, DownCnt=0
+[DBG ][LSTK]: ABP Connection OK!
+Connection - In Progress ...
+Connection - Successful
+Temp=23.000000 Humi=55.000000
+Moist=0.000000
+Sending 11 bytes
+[INFO][LSTK]: RTS = 11 bytes, PEND = 0
+[DBG ][LMAC]: Next Channel Idx=0, DR=4
+[DBG ][LSTK]: Frame scheduled to TX..
+11 bytes scheduled for transmission
+```
 1. You should see the data on the console also appear on TTN in your device under the data tab.
 
