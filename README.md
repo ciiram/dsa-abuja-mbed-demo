@@ -58,7 +58,7 @@ This has cloned the repository.
 1. Open `hello_world.cpp` and change the value of the constant
 
    ```
-   const float BLINK_PERIOD_S = 1
+   const float BLINK_PERIOD_S = 1;
    ```
    
    to a smaller or larger value and recompile the program and drag-and-drop the .bin to the Nucleo board. Confirm that the blinking rate has now changed.

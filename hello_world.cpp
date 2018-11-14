@@ -5,7 +5,7 @@
 #include "mbed.h"
 
 DigitalOut led(LED1);  // led to blink
-const float BLINK_PERIOD_S = 1
+const float BLINK_PERIOD_S = 1;
 int main() {
   while (1) {
     led = !led;  // change the state of LED OFF -> ON or ON -> OFF
